@@ -74,6 +74,9 @@ $factory->define(\App\Entity\Info::class, function (Faker $faker) {
         'social' => [
             'facebook' => 'https://www.facebook.com',
             'instagram' => 'https://www.instagram.com',
+            'telegram' => '',
+            'twitter' => '',
+            'youtube' => '',
         ]
     ];
 });
