@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col">
                 <div class="alert alert-danger">
-                    <p>Fields marked with (*) are required.</p>11111
+                    <p>Fields marked with (*) are required.</p>
                 </div>
             </div>
         </div>

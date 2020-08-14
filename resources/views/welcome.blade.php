@@ -126,15 +126,26 @@
 </section>
 <section class="bg-extra-dark-gray wow fadeIn" id="about">
     <div class="container">
-        <div class="row align-items-center justify-content-between">
-            <div class="col-12 col-lg-4 wow fadeInLeft">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 col-lg-12 wow fadeInLeft text-center">
                 <h5 class="alt-font text-light-gray margin-30px-bottom">{{__('menu.about')}}</h5>
                 <p class="text-light-gray">{{$info->about[app()->getLocale()]}}</p>
             </div>
-            <div class="col-12 col-lg-7 lg-margin-50px-bottom wow fadeInRight text-light-gray">
-                <h5 class="alt-font text-light-gray margin-30px-bottom">{{__('menu.services')}}</h5>
-                <p>{!! $info->services[app()->getLocale()]  !!}</p>
+            <div class="col-12 col-lg-10 lg-margin-50px-bottom wow fadeInRight text-light-gray">
+                <h5 class="alt-font text-light-gray margin-30px-bottom text-center">{{__('menu.services')}}</h5>
             </div>
+        </div>
+        <div class="row">
+            @foreach($services as $service)
+                <div class="col-12 col-xl-4 col-md-6 margin-six-bottom lg-margin-six-bottom sm-margin-ten-bottom wow fadeInUp last-paragraph-no-margin">
+                    <div class="feature-box-5 position-relative">
+                        <i class="fas fa-cog text-light-gray icon-medium"></i>
+                        <div class="feature-content">
+                            <div class="text-light-gray alt-font font-weight-600">{{$service->service[app()->getLocale()]}}</div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -149,7 +160,7 @@
         </div>
         <div class="row align-items-center">
             <div class="col-12 col-lg-5 text-center md-margin-30px-bottom wow fadeInLeft">
-                <img src="http://placehold.it/900x650" alt="" class="border-radius-6 w-100">
+                <img src="{{asset('./images/incubation.png')}}" alt="" class="border-radius-6 w-100">
             </div>
             <div
                 class="col-12 col-lg-7 padding-eight-lr text-center text-lg-left lg-padding-nine-right md-padding-15px-lr wow fadeInRight"
@@ -175,7 +186,7 @@
                         aria-hidden="true"></i> Регистрация</a>
             </div>
             <div class="col-12 col-lg-5 text-center md-margin-30px-bottom wow  fadeInRight">
-                <img src="http://placehold.it/900x650" alt="" class="border-radius-6 w-100">
+                <img src="{{asset('./images/acceleration.png')}}" alt="" class="border-radius-6 w-100">
             </div>
         </div>
     </div>
@@ -231,7 +242,7 @@
         </div>
         <div class="row align-items-center">
             <div class="col-12 col-lg-5 text-center md-margin-30px-bottom wow fadeInLeft">
-                <img src="http://placehold.it/900x650" alt="" class="border-radius-6 w-100">
+                <img src="{{asset('./images/mentor.jpg')}}" alt="" class="border-radius-6 w-100">
             </div>
             <div
                 class="col-12 col-lg-7 padding-eight-lr text-center text-lg-left lg-padding-nine-right md-padding-15px-lr wow fadeInRight"
@@ -265,11 +276,51 @@
                         aria-hidden="true"></i> Подать заявку</a>
             </div>
             <div class="col-12 col-lg-5 text-center md-margin-30px-bottom wow fadeInRight">
-                <img src="http://placehold.it/900x650" alt="" class="border-radius-6 w-100">
+                <img src="{{asset('./images/tracker.jpg')}}" alt="" class="border-radius-6 w-100">
             </div>
         </div>
     </div>
 </section>
+
+@if($startups->count())
+<section class="wow fadeIn bg-light-gray" id="startups">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div
+                class="col-12 col-xl-7 col-lg-8 col-md-6 margin-eight-bottom md-margin-40px-bottom sm-margin-30px-bottom text-center">
+                <h5 class="alt-font text-extra-dark-gray font-weight-600 mb-0">{{__('menu.startups')}}</h5>
+            </div>
+        </div>
+        <div class="row position-relative">
+            <div class="swiper-container black-move blog-slider swiper-four-slides swiper-pagination-bottom">
+                <div class="swiper-wrapper">
+                @foreach($startups as $startup)
+                    <!-- start post item -->
+                        <div class="swiper-slide  col-12 col-lg-3 col-md-6 margin-50px-bottom last-paragraph-no-margin sm-margin-30px-bottom wow fadeInUp">
+                            <div class="blog-post blog-post-style1 text-center text-md-left">
+                                <div class="blog-post-images overflow-hidden margin-25px-bottom md-margin-20px-bottom">
+                                        <img
+                                            src="{{$startup->thumbnail ? $startup->getImagePath('thumbnail') : asset('./images/news.png') }}"
+                                            alt="">
+                                </div>
+                                <div class="post-details">
+                            <span
+                                class="post-author text-extra-small text-medium-gray text-uppercase d-block margin-10px-bottom sm-margin-5px-bottom">{{$startup->created_at}}</span>
+                                 {{$startup->title}}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end post item -->
+                    @endforeach
+                </div>
+                <div class="swiper-pagination swiper-pagination-four-slides"></div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+@endif
 
 <section class="wow fadeIn bg-light-gray" id="news">
     <div class="container">
@@ -312,12 +363,34 @@
     </div>
 </section>
 
+@if($partners->count())
+<section class="wow fadeIn  bg-light-gray" >
+    <div class="container">
+        <div class="row justify-content-center">
+            <div
+                class="col-12 col-xl-7 col-lg-8 col-md-6 margin-eight-bottom md-margin-40px-bottom sm-margin-30px-bottom text-center">
+                <h5 class="alt-font text-extra-dark-gray font-weight-600 mb-0">{{__('menu.partners')}}</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="swiper-slider-clients swiper-container black-move wow fadeIn swiper-container-initialized swiper-container-horizontal" style="visibility: visible; animation-name: fadeIn;">
+                <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                    @foreach($partners as $partner)
+                    <div class="swiper-slide text-center" style="width: 292.5px;"><img src="{{$partner->getImagePath('thumbnail', 'thumb')}}" alt="" data-no-retina=""></div>
+                    @endforeach
+                </div>
+         <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+        </div>
+    </div>
+</section>
+@endif
+
 <footer class="footer-strip-dark bg-extra-dark-gray padding-50px-tb sm-padding-30px-tb" id="contacts">
     <div class="container">
         <div class="row align-items-center">
             <!-- start logo -->
             <div class="col-md-3 text-center text-lg-left sm-margin-20px-bottom">
-                <p class="mb-0">{{$info->contact}}</p>
+                <p class="mb-0">{!!$info->contact!!}</p>
             </div>
             <!-- end logo -->
             <!-- start copyright -->

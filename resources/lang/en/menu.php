@@ -11,4 +11,6 @@ return array (
   'acceleration' => 'Acceleration',
   'incubation' => 'Incubation',
   'services' => 'Services',
+  'partners' => 'Partners',
+  'startups' => 'Startups',
 );

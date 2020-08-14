@@ -63,7 +63,6 @@ class EventsController extends Controller
             'ru_content' => 'required',
             'uz_content' => 'required',
             'en_content' => 'required',
-            'thumbnail' => 'required',
         ]);
 
         $event_data = [

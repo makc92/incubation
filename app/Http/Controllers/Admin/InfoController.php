@@ -26,9 +26,6 @@ class InfoController extends Controller
             'about.ru' => 'required',
             'about.uz' => 'required',
             'about.en' => 'required',
-            'services.ru' => 'required',
-            'services.uz' => 'required',
-            'services.en' => 'required',
         ]);
         $info->update($request->all());
         flash('Информация изменена')->success();

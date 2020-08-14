@@ -62,11 +62,16 @@ Route::group(
         Route::resource('news', 'NewsController');
         Route::resource('event', 'EventsController');
         Route::resource('slider', 'SliderController');
+        Route::resource('partner', 'PartnersController');
+        Route::resource('startup', 'StartupsController');
+        Route::resource('services', 'ServicesController');
+
 
         Route::resource('startups', 'Applications\StartupController');
         Route::resource('events', 'Applications\EventsController');
         Route::resource('mentors', 'Applications\MentorsController');
         Route::resource('trackers', 'Applications\TrackersController');
+
 
         Route::get('/info', 'InfoController@index')->name('info');
         Route::get('/contact', 'InfoController@contact')->name('contact');

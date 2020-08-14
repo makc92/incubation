@@ -27,7 +27,7 @@ class SliderController extends Controller
         ]);
 
 
-        $news = Slider::create($request->all());
+        $slider = Slider::create($request->all());
         flash('Slider added')->success();
         return redirect()->route('admin.slider.index');
     }

@@ -5,6 +5,7 @@
 @endphp
 
 @extends('adminlte::page')
+@section('plugins.summernote', true)
 
 
 @section('title', 'Contact Info')
@@ -30,7 +31,7 @@
                         <div class="col-6">
                             <div class="form-group">
                                 {{Form::label('name', 'Контактная информация(*)')}}
-                                {{Form::textarea('contact', $value=old('contact',  $info->contact), $attributes = ['class' => 'form-control'])}}
+                                {{Form::textarea('contact', $value=old('contact',  $info->contact), $attributes = ['class' => 'form-control summernote_field'])}}
                             </div>
                         </div>
                         <div class="col-6">
@@ -66,6 +67,10 @@
 @stop
 
 @section('js')
-
+    <script>
+        $('.summernote_field').summernote({
+            height: 300
+        });
+    </script>
 @stop
 

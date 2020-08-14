@@ -274,6 +274,21 @@ return [
             'url' => 'admin/event',
             'icon' => 'fa fa-tasks',
         ],
+        [
+            'text' => 'Partners',
+            'url' => 'admin/partner',
+            'icon' => 'fas fa-handshake',
+        ],
+        [
+            'text' => 'Startups',
+            'url' => 'admin/startup',
+            'icon' => 'fas fa-project-diagram',
+        ],
+        [
+            'text' => 'Services',
+            'url' => 'admin/services',
+            'icon' => 'fas fa-user-cog',
+        ],
         'Applications',
         [
             'text' => 'Startup',

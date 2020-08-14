@@ -46,20 +46,6 @@
                                 {{Form::textarea('about[en]', $value=old('about[ru]', $info->about['en']), $attributes = ['class' => 'form-control'])}}
                             </div>
                         </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                {{Form::label('name', 'Услуги Центра RU (*)')}}
-                                {{Form::textarea('services[ru]', $value=old('services[ru]',  $info->services['ru']), $attributes = ['class' => 'form-control summernote_field'])}}
-                            </div>
-                            <div class="form-group">
-                                {{Form::label('name', 'Услуги Центра UZ (*)')}}
-                                {{Form::textarea('services[uz]', $value=old('services[ru]', $info->services['uz']), $attributes = ['class' => 'form-control summernote_field'])}}
-                            </div>
-                            <div class="form-group">
-                                {{Form::label('name', 'Услуги Центра EN (*)')}}
-                                {{Form::textarea('services[en]', $value=old('services[ru]', $info->services['en']), $attributes = ['class' => 'form-control summernote_field'])}}
-                            </div>
-                        </div>
                     </div>
                         {{ Form::button('Update',['class'=>'btn btn-info','type'=>'submit','id'=>'id-button']) }}
 

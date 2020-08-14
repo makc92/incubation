@@ -21,7 +21,6 @@ class NewsController extends Controller
 
     public function store(Request $request)
     {
-
         $request->validate([
             'ru_title' => 'required',
             'uz_title' => 'required',
@@ -31,9 +30,6 @@ class NewsController extends Controller
             'en_content' => 'required',
             'thumbnail' => 'required',
         ]);
-
-
-
         $news_data = [
             'ru' => [
                 'title' => $request->input('ru_title'),
@@ -73,7 +69,6 @@ class NewsController extends Controller
             'ru_content' => 'required',
             'uz_content' => 'required',
             'en_content' => 'required',
-            'thumbnail' => 'required',
         ]);
 
         $news_data = [

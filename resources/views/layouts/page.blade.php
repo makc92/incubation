@@ -79,7 +79,7 @@
         <div class="row align-items-center">
             <!-- start logo -->
             <div class="col-md-3 text-center text-lg-left sm-margin-20px-bottom">
-                <p class="mb-0">{{$info->contact}}</p>
+                <p class="mb-0">{!!$info->contact!!}</p>
             </div>
             <!-- end logo -->
             <!-- start copyright -->

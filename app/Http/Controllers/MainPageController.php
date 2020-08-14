@@ -8,7 +8,10 @@ use App\Entity\Applications\Tracker;
 use App\Entity\Event;
 use App\Entity\Info;
 use App\Entity\News;
+use App\Entity\Partner;
+use App\Entity\Services;
 use App\Entity\Slider;
+use App\Entity\Startup as StartupFront;
 use Http;
 use Illuminate\Http\Request;
 
@@ -19,7 +22,10 @@ class MainPageController extends Controller
         $news  = News::orderBy('created_at', 'desc')->get();
         $events  = Event::orderBy('created_at', 'desc')->get();;
         $sliders = Slider::all();
-        return view('welcome', compact(['news', 'events','info','sliders']));
+        $partners = Partner::all();
+        $startups = StartupFront::all();
+        $services = Services::all();
+        return view('welcome', compact(['news', 'events','info','sliders','partners','startups','services']));
     }
     public function mentorForm(){
         return view('front.mentor');
