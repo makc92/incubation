@@ -14,7 +14,7 @@
     <meta name="keywords"
           content="creative, modern, clean, bootstrap responsive, html5, css3, portfolio, blog, agency, templates, multipurpose, one page, corporate, start-up, studio, branding, designer, freelancer, carousel, parallax, photography, personal, masonry, grid, coming soon, faq">
     <!-- favicon -->
-    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}">
     <link rel="stylesheet" href="{{mix('/css/main.css')}}">
 </head>
 <body>

@@ -43,7 +43,7 @@ class MainPageController extends Controller
             'graduate' => 'required',
         ]);
         Mentor::create($request->all());
-        $response = Http::post('http://itparkdevtestdomain.uz/admin/mentors', [
+        $response = Http::post('https://incubationcenters.it-park.uz/admin/mentors', [
             'fullname' => $request->input('fullname'),
             'company' => $request->input('company'),
             'position' => $request->input('position'),
@@ -73,7 +73,7 @@ class MainPageController extends Controller
             'graduate' => 'required',
         ]);
         Tracker::create($request->all());
-        $response = Http::post('http://itparkdevtestdomain.uz/admin/trackers', [
+        $response = Http::post('https://incubationcenters.it-park.uz/admin/trackers', [
             'fullname' => $request->input('fullname'),
             'company' => $request->input('company'),
             'position' => $request->input('position'),
@@ -112,7 +112,7 @@ class MainPageController extends Controller
 
         $response = Http::attach(
             'presentation', $file, 'presentation'
-        )->post('http://itparkdevtestdomain.uz/admin/startups', [
+        )->post('https://incubationcenters.it-park.uz/admin/startups', [
             'fullname' => $request->input('fullname'),
             'university' => $request->input('university'),
             'course' => $request->input('course'),
@@ -146,7 +146,7 @@ class MainPageController extends Controller
             'event' => 'required',
         ]);
         \App\Entity\Applications\Event::create($request->all());
-        $response = Http::post('http://itparkdevtestdomain.uz/admin/events', [
+        $response = Http::post('https://incubationcenters.it-park.uz/admin/events', [
             'fullname' => $request->input('fullname'),
             'university' => $request->input('university'),
             'course' => $request->input('course'),

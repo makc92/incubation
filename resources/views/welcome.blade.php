@@ -192,6 +192,7 @@
     </div>
 </section>
 
+@if($events->count())
 <section class="wow fadeIn bg-light-gray" id="events">
     <div class="container">
         <div class="row justify-content-center">
@@ -231,6 +232,7 @@
         </div>
     </div>
 </section>
+@endif
 
 <section class="wow fadeIn" id="mentors">
     <div class="container">
@@ -322,6 +324,7 @@
 </section>
 @endif
 
+@if($news->count())
 <section class="wow fadeIn bg-light-gray" id="news">
     <div class="container">
         <div class="row justify-content-center">
@@ -362,6 +365,7 @@
         </div>
     </div>
 </section>
+@endif
 
 @if($partners->count())
 <section class="wow fadeIn  bg-light-gray" >

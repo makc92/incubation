@@ -17,6 +17,9 @@
     <div class="row">
         <div class="col-12">
             @include('flash::message')
+            @if(!$applications->isEmpty())
+            <a href="{{route('admin.startups.export')}}" class="btn bg-gradient-success mb-2"><i class="fas fa-plus-square"></i> EXPORT xlsx</a>
+            @endif
             <div class="card">
                 <div class="card-body">
                     <table id="application" class="table table-bordered table-hover dataTable" role="grid"

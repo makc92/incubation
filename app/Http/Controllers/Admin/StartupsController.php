@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Entity\Startup;
+use App\Exports\StartupExport;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class StartupsController extends Controller
 {
@@ -58,4 +61,6 @@ class StartupsController extends Controller
        flash('Startup deleted')->success();
        return redirect()->route('admin.startup.index');
     }
+
+
 }

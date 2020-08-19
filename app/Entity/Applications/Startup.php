@@ -68,10 +68,4 @@ class Startup extends Model
         $application->save();
         return $application;
     }
-
-    public function getCreatedAtAttribute($date)
-    {
-        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d-m-Y H:i');
-    }
-
 }

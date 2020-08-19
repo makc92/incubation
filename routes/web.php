@@ -66,6 +66,11 @@ Route::group(
         Route::resource('startup', 'StartupsController');
         Route::resource('services', 'ServicesController');
 
+        Route::get('startups/export/', 'Applications\StartupController@export')->name('startups.export');
+        Route::get('events/export/', 'Applications\EventsController@export')->name('events.export');
+        Route::get('mentors/export/', 'Applications\MentorsController@export')->name('mentors.export');
+        Route::get('trackers/export/', 'Applications\TrackersController@export')->name('trackers.export');
+
 
         Route::resource('startups', 'Applications\StartupController');
         Route::resource('events', 'Applications\EventsController');
