@@ -44,7 +44,11 @@ Route::group([
 
 });
 
-Auth::routes();
+Auth::routes([
+    'register' => false, // Registration Routes...
+    'reset' => false, // Password Reset Routes...
+    'verify' => false, // Email Verification Routes...
+]);
 
 /*Route::get('/home', function() {
     return view('home');
