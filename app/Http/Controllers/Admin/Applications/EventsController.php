@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin\Applications;
 
 use App\Entity\Applications\Event;
+use App\Exports\EventExport;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class EventsController extends Controller
 {
@@ -26,5 +28,8 @@ class EventsController extends Controller
         $event->delete();
         flash('Application deleted')->success();
         return redirect()->route('admin.events.index');
+    }
+    public function export(){
+        return Excel::download(new EventExport, 'event.xlsx');
     }
 }

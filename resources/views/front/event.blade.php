@@ -22,7 +22,7 @@
                             @endif
                                 <div id="success-contact-form-3" class="mx-0" style="display: none;"></div>
                                 <input type="text" value="{{old('fullname')}}" name="fullname" id="fullname" placeholder="ФИО (*)" class="input-bg">
-                                <input type="text" name="university" id="university" class="input-bg" value="{{$university}}" readonly>
+                                <input type="text" value="{{old('university')}}"  name="university" id="university" class="input-bg" placeholder="Название Университета">
                                 <input type="text" value="{{old('course')}}" name="course" id="course" placeholder="Курс (*)" class="input-bg">
                                 <input type="text" value="{{old('faculty')}}" name="faculty" id="faculty" placeholder="Факультет (*)" class="input-bg">
                                 <input type="text" value="{{old('phone')}}" name="phone" id="phone" placeholder="Контактный номер (*)" class="input-bg">

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin\Applications;
 
 use App\Entity\Applications\Tracker;
+use App\Exports\TrackerExport;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class TrackersController extends Controller
 {
@@ -26,5 +28,8 @@ class TrackersController extends Controller
         $tracker->delete();
         flash('Application deleted')->success();
         return redirect()->route('admin.trackers.index');
+    }
+    public function export(){
+        return Excel::download(new TrackerExport, 'tracker.xlsx');
     }
 }

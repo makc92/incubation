@@ -44,7 +44,11 @@ Route::group([
 
 });
 
-Auth::routes();
+Auth::routes([
+    'register' => false, // Registration Routes...
+    'reset' => false, // Password Reset Routes...
+    'verify' => false, // Email Verification Routes...
+]);
 
 /*Route::get('/home', function() {
     return view('home');
@@ -65,6 +69,11 @@ Route::group(
         Route::resource('partner', 'PartnersController');
         Route::resource('startup', 'StartupsController');
         Route::resource('services', 'ServicesController');
+
+        Route::get('startups/export/', 'Applications\StartupController@export')->name('startups.export');
+        Route::get('events/export/', 'Applications\EventsController@export')->name('events.export');
+        Route::get('mentors/export/', 'Applications\MentorsController@export')->name('mentors.export');
+        Route::get('trackers/export/', 'Applications\TrackersController@export')->name('trackers.export');
 
 
         Route::resource('startups', 'Applications\StartupController');

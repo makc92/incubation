@@ -6,13 +6,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1"/>
-    <meta name="author" content="ThemeZaa">
+    <meta name="author" content="ITPARK">
     <!-- description -->
     <meta name="description"
-          content="POFO is a highly creative, modern, visually stunning and Bootstrap responsive multipurpose agency and portfolio HTML5 template with 25 ready home page demos.">
+          content="ITPARK Incubation Center">
     <!-- keywords -->
     <meta name="keywords"
-          content="creative, modern, clean, bootstrap responsive, html5, css3, portfolio, blog, agency, templates, multipurpose, one page, corporate, start-up, studio, branding, designer, freelancer, carousel, parallax, photography, personal, masonry, grid, coming soon, faq">
+          content="Itpark, Incubation, Acceleration, Mentoring, Tracking, Uzbekistan, University">
     <!-- favicon -->
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="stylesheet" href="{{mix('/css/main.css')}}">
@@ -39,21 +39,23 @@
     </div>
     <nav
         class="navbar navbar-default bootsnav bg-transparent navbar-brand-top nav-box-width navbar-expand-lg on no-full">
-        <div class="container nav-header-container  text-center flex-wrap">
-            <div class="col col-lg-12 mr-0 d-flex justify-content-lg-between align-items-center">
+        <div class="container nav-header-container  text-center flex-column">
+            <div class="col col-lg-12 mr-0 d-flex justify-content-lg-between align-items-center flex-grow-1 text-center mt-2">
+                <a href="/" title="Pofo" class="navbar-brand p-0 m-auto" style="font-size: 1rem;!important">
+                    {{$university}}
+                </a>
+            </div>
+            <div class="col-auto mt-2 w-100 justify-content-between d-flex">
                 <a href="/" class="navbar-brand p-0">
                     <img src="{{asset('/images/logo.png')}}" class="default" alt="Pofo" width="100"
                          height="100">
-                </a>
-                <a href="/" title="Pofo" class="navbar-brand p-0">
-                    {{$university}}
                 </a>
                 <a href="https://it-park.uz/" target="_blank" class="navbar-brand p-0">
                     <img src="{{asset('/images/it-park-logo.svg')}}" class="default" alt="Pofo" width="100"
                          height="100">
                 </a>
             </div>
-            <div class="col-auto col-lg accordion-menu pr-lg-0">
+            <div class="col-auto col-lg accordion-menu pr-lg-0 d-flex">
                 <button type="button" class="navbar-toggler collapsed" data-toggle="collapse"
                         data-target="#navbar-collapse-toggle-1">
                     <span class="sr-only">toggle navigation</span>
@@ -192,6 +194,7 @@
     </div>
 </section>
 
+@if($events->count())
 <section class="wow fadeIn bg-light-gray" id="events">
     <div class="container">
         <div class="row justify-content-center">
@@ -231,6 +234,7 @@
         </div>
     </div>
 </section>
+@endif
 
 <section class="wow fadeIn" id="mentors">
     <div class="container">
@@ -322,6 +326,7 @@
 </section>
 @endif
 
+@if($news->count())
 <section class="wow fadeIn bg-light-gray" id="news">
     <div class="container">
         <div class="row justify-content-center">
@@ -362,6 +367,7 @@
         </div>
     </div>
 </section>
+@endif
 
 @if($partners->count())
 <section class="wow fadeIn  bg-light-gray" >

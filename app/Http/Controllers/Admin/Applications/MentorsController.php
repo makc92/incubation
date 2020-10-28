@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin\Applications;
 
 use App\Entity\Applications\Mentor;
+use App\Exports\MentorExport;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class MentorsController extends Controller
 {
@@ -26,5 +28,8 @@ class MentorsController extends Controller
         $mentor->delete();
         flash('Application deleted')->success();
         return redirect()->route('admin.mentors.index');
+    }
+    public function export(){
+        return Excel::download(new MentorExport, 'mentor.xlsx');
     }
 }

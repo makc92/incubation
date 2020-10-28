@@ -22,6 +22,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
         "laravelcollective/html": "^6.1",
+        "maatwebsite/excel": "^3.1",
         "sven/artisan-view": "^3.3"
     },
     "require-dev": {
